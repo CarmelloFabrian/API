@@ -16,7 +16,10 @@ namespace API.ViewModel
         public string Email { get; set; }
         public Gender Gender { get; set; }
         //acc
-         public string Password { get; set; }
+        public string Password { get; set; }
+        public int OTP { get; set; }
+        public string NewPassword { get; set; }
+        public string ConfirmPassword { get; set; }
         //edu
         public string Degree { get; set; }
         public string GPA { get; set; }

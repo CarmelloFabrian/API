@@ -68,3 +68,6 @@ C:\Users\Cero\source\repos\API\API\bin\Debug\netcoreapp3.1\Microsoft.AspNetCore.
 C:\Users\Cero\source\repos\API\API\bin\Debug\netcoreapp3.1\Microsoft.AspNetCore.Mvc.NewtonsoftJson.dll
 C:\Users\Cero\source\repos\API\API\bin\Debug\netcoreapp3.1\Newtonsoft.Json.Bson.dll
 C:\Users\Cero\source\repos\API\API\bin\Debug\netcoreapp3.1\BCrypt.Net-Core.dll
+C:\Users\Cero\source\repos\API\API\bin\Debug\netcoreapp3.1\MailKit.dll
+C:\Users\Cero\source\repos\API\API\bin\Debug\netcoreapp3.1\MimeKit.dll
+C:\Users\Cero\source\repos\API\API\bin\Debug\netcoreapp3.1\BouncyCastle.Crypto.dll
