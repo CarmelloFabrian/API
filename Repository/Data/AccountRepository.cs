@@ -25,12 +25,12 @@ namespace API.Repository.Data
             var email = (from g in context.Employees where g.Email == registerVM.Email select g).FirstOrDefault<Employee>();
             if (phone != null || email != null)
             {
-            var employees = context.Employees;
-            var accounts = context.Accounts;
-            var result = (from emp in employees
-                          join acc in accounts on emp.NIK equals acc.NIK
-                          where emp.Phone == registerVM.Phone || emp.Email == registerVM.Email
-                          select acc).FirstOrDefault();
+                var employees = context.Employees;
+                var accounts = context.Accounts;
+                var result = (from emp in employees
+                              join acc in accounts on emp.NIK equals acc.NIK
+                              where emp.Phone == registerVM.Phone || emp.Email == registerVM.Email
+                              select acc).FirstOrDefault();
                 if (BCrypt.Net.BCrypt.Verify(registerVM.Password, result.Password))
                 {
                     return 1;//login 
@@ -72,7 +72,7 @@ namespace API.Repository.Data
                     EnableSsl = true,
                     DeliveryMethod = SmtpDeliveryMethod.Network,
                     UseDefaultCredentials = false,
-                    Credentials = new NetworkCredential(fromAdress.Address ,fromPassword)
+                    Credentials = new NetworkCredential(fromAdress.Address, fromPassword)
                 };
 
                 using (var message = new MailMessage(fromAdress, toAdress)
@@ -101,7 +101,7 @@ namespace API.Repository.Data
                 {
                     if (DateTime.Now < acc.ExpiredToken)
                     {
-                        if(acc.IsUsed == false)
+                        if (acc.IsUsed == false)
                         {
                             if (registerVM.NewPassword == registerVM.ConfirmPassword)
                             {
