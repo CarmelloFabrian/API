@@ -4,14 +4,16 @@ using API.Context;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 
 namespace API.Migrations
 {
     [DbContext(typeof(MyContext))]
-    partial class MyContextModelSnapshot : ModelSnapshot
+    [Migration("20220131041009_add-role-model-relation")]
+    partial class addrolemodelrelation
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
@@ -132,10 +134,15 @@ namespace API.Migrations
                         .HasColumnType("int")
                         .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
 
+                    b.Property<string>("AccountNIK")
+                        .HasColumnType("nvarchar(450)");
+
                     b.Property<string>("Name")
                         .HasColumnType("nvarchar(max)");
 
                     b.HasKey("Id");
+
+                    b.HasIndex("AccountNIK");
 
                     b.ToTable("TB_M_Role");
                 });
@@ -213,6 +220,15 @@ namespace API.Migrations
                     b.Navigation("Account");
 
                     b.Navigation("Education");
+                });
+
+            modelBuilder.Entity("API.Models.Role", b =>
+                {
+                    b.HasOne("API.Models.Account", "Account")
+                        .WithMany()
+                        .HasForeignKey("AccountNIK");
+
+                    b.Navigation("Account");
                 });
 
             modelBuilder.Entity("API.Models.Account", b =>

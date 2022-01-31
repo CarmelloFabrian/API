@@ -13,6 +13,7 @@ namespace API.Models
     {
         public int Id { get; set; }
         public string Name { get; set; }
+        [JsonIgnore]
         public virtual ICollection<Education> Educations { get; set; }
     }
 }
