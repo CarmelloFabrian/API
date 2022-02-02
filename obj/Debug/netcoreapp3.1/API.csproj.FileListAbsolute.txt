@@ -71,3 +71,4 @@ C:\Users\Cero\source\repos\API\API\bin\Debug\netcoreapp3.1\BCrypt.Net-Core.dll
 C:\Users\Cero\source\repos\API\API\bin\Debug\netcoreapp3.1\MailKit.dll
 C:\Users\Cero\source\repos\API\API\bin\Debug\netcoreapp3.1\MimeKit.dll
 C:\Users\Cero\source\repos\API\API\bin\Debug\netcoreapp3.1\BouncyCastle.Crypto.dll
+C:\Users\Cero\source\repos\API\API\bin\Debug\netcoreapp3.1\Microsoft.AspNetCore.Authentication.JwtBearer.dll

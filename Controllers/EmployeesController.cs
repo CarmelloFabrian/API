@@ -2,6 +2,7 @@
 using API.Models;
 using API.Repository.Data;
 using API.ViewModel;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 using System;
@@ -61,6 +62,17 @@ namespace API.Controllers
             {
                 return NotFound("data tidak ditemukan");
             }
+        }
+        [Authorize]
+        [HttpGet("TestJwt")]
+        public ActionResult TestJWT()
+        {
+            return Ok("Test JWT berhasil");
+        }
+        [HttpGet("TestCORS")]
+        public ActionResult TestCORS()
+        {
+            return Ok("Test CORS berhasil");
         }
     }
 }
